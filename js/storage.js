@@ -1,10 +1,10 @@
-// Definimos las claves de LocalStorage como un objeto global
+
 const LS_KEYS = {
   PRODUCTS: "sc_products",
   CART: "sc_cart"
 };
 
-// Creamos un objeto global "storage" para guardar/cargar datos
+
 const storage = {
   save: function (key, data) {
     localStorage.setItem(key, JSON.stringify(data));
