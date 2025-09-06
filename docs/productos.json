@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cartera Milano Marrón",
+    "precio": 45000,
+    "categoria": "Clásica",
+    "stock": 10,
+    "imagen": "cartera1.jpg",
+    "descripcion": "Elegante cartera de cuero genuino con acabado mate"
+  },
+  {
+    "id": 2,
+    "nombre": "Cartera Urban Verde",
+    "precio": 52000,
+    "categoria": "Moderna",
+    "stock": 8,
+    "imagen": "cartera2.jpg",
+    "descripcion": "Diseño contemporáneo con compartimentos organizadores"
+  },
+  {
+    "id": 3,
+    "nombre": "Cartera Royal Burdeos",
+    "precio": 60000,
+    "categoria": "Elegante",
+    "stock": 5,
+    "imagen": "cartera3.jpg",
+    "descripcion": "Lujo y sofisticación en cada detalle"
+  },
+  {
+    "id": 4,
+    "nombre": "Cartera Negra Minimalista",
+    "precio": 85000,
+    "categoria": "Premium",
+    "stock": 12,
+    "imagen": "carterablack.jpg",
+    "descripcion": "Perfecta para el mundo profesional, con múltiples compartimentos"
+  },
+  {
+    "id": 5,
+    "nombre": "Cartera Boho Beige",
+    "precio": 38000,
+    "categoria": "Clásica",
+    "stock": 15,
+    "imagen": "carterabeige.jpg",
+    "descripcion": "Estilo bohemio con detalles en flecos y textura suave"
+  },
+  {
+    "id": 6,
+    "nombre": "Cartera Midnight Azul",
+    "precio": 67000,
+    "categoria": "Premium",
+    "stock": 7,
+    "imagen": "bagblue.jpg",
+    "descripcion": "Elegancia nocturna con brillo sutil y acabado premium"
+  }
+]

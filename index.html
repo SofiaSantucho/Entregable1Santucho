@@ -4,24 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aurelie - Tienda de Carteras</title>
+  <link rel="icon" type="image/png" href="docs/img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="docs/css/style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
 
- 
   <header class="header">
     <div class="container header__inner">
       <h1 class="brand">Aurelie</h1>
       <nav>
         <ul class="nav-menu">
           <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
           <li><a href="#carrito">Carrito</a></li>
+          <li class="user-actions">
+            <button id="login-btn" class="btn-link">Iniciar Sesión</button>
+            <button id="register-btn" class="btn-link">Registrarse</button>
+            <div id="user-menu" class="user-menu" style="display: none;">
+              <span id="username-display"></span>
+              <button id="logout-btn" class="btn-link">Cerrar Sesión</button>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
-
 
   <section class="hero">
     <div class="container hero__inner">
@@ -36,59 +46,146 @@
     </div>
   </section>
 
-  
   <section id="productos" class="productos">
     <div class="container">
       <h2>Nuestras Carteras</h2>
+      <div class="filtros">
+        <button class="filtro-btn active" data-categoria="todos">Todas</button>
+        <button class="filtro-btn" data-categoria="Clásica">Clásicas</button>
+        <button class="filtro-btn" data-categoria="Moderna">Modernas</button>
+        <button class="filtro-btn" data-categoria="Elegante">Elegantes</button>
+        <button class="filtro-btn" data-categoria="Premium">Premium</button>
+      </div>
       <div class="productos__grid">
-        
-        <div class="producto">
-          <img src="docs/img/cartera1.jpg" alt="Cartera Marrón">
-          <h3>Cartera Marrón</h3>
-          <p>Confeccionada en materiales de alta calidad, con un diseño elegante y atemporal.</p>
-          <button class="btn" data-id="1">Añadir al carrito</button>
-        </div>
-
-        <div class="producto">
-          <img src="docs/img/cartera2.jpg" alt="Cartera Verde">
-          <h3>Cartera Verde</h3>
-          <p>Diseño contemporáneo en cuero de primera calidad, perfecta para realzar tu estilo.</p>
-          <button class="btn" data-id="2">Añadir al carrito</button>
-        </div>
-
-        <div class="producto">
-          <img src="docs/img/cartera3.jpg" alt="Cartera Burdeos">
-          <h3>Cartera Burdeos</h3>
-          <p>Textura fina y acabado de lujo que aportan sofisticación a cualquier look.</p>
-          <button class="btn" data-id="3">Añadir al carrito</button>
-        </div>
-
+     
       </div>
     </div>
   </section>
 
- 
-  <section id="carrito" class="carrito">
+  <section id="contacto" class="contacto">
     <div class="container">
-      <h2>Tu Carrito</h2>
-      <ul id="lista-carrito">
-       
-      </ul>
-      <p>Total: <span id="total">$0</span></p>
-      <button class="btn">Finalizar Compra</button>
+      <h2>Contacto</h2>
+      <div class="contacto__grid">
+        <div class="contacto__info">
+          <h3>Información de Contacto</h3>
+          <div class="contacto__item">
+            <strong>📍 Dirección:</strong>
+            <p>Av. Corrientes 1234, CABA, Argentina</p>
+          </div>
+          <div class="contacto__item">
+            <strong>📞 Teléfono:</strong>
+            <p>+54 11 1234-5678</p>
+          </div>
+          <div class="contacto__item">
+            <strong>📧 Email:</strong>
+            <p>contacto@aurelie.com.ar</p>
+          </div>
+          <div class="contacto__item">
+            <strong>🕒 Horarios:</strong>
+            <p>Lunes a Viernes: 9:00 - 18:00<br>
+               Sábados: 10:00 - 16:00</p>
+          </div>
+        </div>
+        <div class="contacto__form">
+          <h3>Envíanos un Mensaje</h3>
+          <form id="contacto-form">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" value="Sofía" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" value="sofia@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" value="+54 11 1234-5678">
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required>¡Hola! Quisiera más información sobre sus carteras.</textarea>
+            </div>
+            <button type="submit" class="btn">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
-  
+  <section id="carrito" class="carrito">
+    <div class="container">
+      <h2>Tu Carrito</h2>
+      <ul id="lista-carrito"></ul>
+      <p>Total: <span id="total">$0</span></p>
+      <button id="finalizar-compra-btn" class="btn">Finalizar Compra</button>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Aurelie - Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <script src="docs/js/storage.js"></script>
-  <script src="docs/js/script.js"></script>
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit" class="btn">Iniciar Sesión</button>
+        <p class="form-text">¿No tienes cuenta? <a href="#" id="switch-to-register">Regístrate aquí</a></p>
+      </form>
+    </div>
+  </div>
 
+  <div id="register-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Crear Cuenta</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="register-nombre">Nombre Completo</label>
+          <input type="text" id="register-nombre" value="Sofía" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" value="sofia@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="register-telefono">Teléfono</label>
+          <input type="tel" id="register-telefono" value="+54 11 1234-5678" required>
+        </div>
+        <div class="form-group">
+          <label for="register-direccion">Dirección</label>
+          <input type="text" id="register-direccion" value="Calle Falsa 123" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Contraseña</label>
+          <input type="password" id="register-password" value="12345678" required>
+        </div>
+        <div class="form-group">
+          <label for="register-confirm-password">Confirmar Contraseña</label>
+          <input type="password" id="register-confirm-password" value="12345678" required>
+        </div>
+        <button type="submit" class="btn">Crear Cuenta</button>
+        <p class="form-text">¿Ya tienes cuenta? <a href="#" id="switch-to-login">Inicia sesión aquí</a></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="modal" style="display: none;"></div>
+  <div id="success-modal" class="modal" style="display: none;"></div>
+  <div id="error-modal" class="modal" style="display: none;"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="docs/js/script.js"></script>
 </body>
 </html>
-
