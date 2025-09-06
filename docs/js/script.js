@@ -31,7 +31,7 @@ postCompra.innerHTML = `
 `;
 document.querySelector(".carrito .container").appendChild(postCompra);
 
-fetch("docs/productos.json")
+fetch("./docs/productos.json")
   .then(res => {
     if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
     return res.json();
