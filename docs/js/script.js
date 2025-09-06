@@ -358,15 +358,14 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   }
 
   const nuevoUsuario = {
-    nombre: formData.get("nombre"),
-    email: formData.get("email"),
-    telefono: formData.get("telefono"),
-    direccion: formData.get("direccion"),
-    password: formData.get("password")
+    nombre: nombre,
+    email: email,
+    telefono: telefono,
+    direccion: direccion,
+    password: password
   };
 
-
-  if (nuevoUsuario.password !== confirmarPassword) {
+  if (nuevoUsuario.password !== confirmPassword) {
     Swal.fire({
       icon: 'error',
       title: 'Error de contraseña',
